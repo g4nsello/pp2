@@ -25,14 +25,14 @@ font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
 
-background = pygame.image.load("/Users/daniil/Desktop/cods/lab08/AnimatedStreet.png")
+background = pygame.image.load(r"C:\Users\hhhg4\Desktop\pp2\lab08\images\AnimatedStreet.png")
 
 DISPLAYSURF = pygame.display.set_mode((400, 600))
 DISPLAYSURF.fill(WHITE)
 pygame.display.set_caption("Game")
 
 
-pygame.mixer.music.load('/Users/daniil/Desktop/cods/lab08/background.wav')
+pygame.mixer.music.load(r'C:\Users\hhhg4\Desktop\pp2\lab08\images\background.wav')
 pygame.mixer.music.play(-1)
 
 
@@ -40,7 +40,7 @@ class Enemy(pygame.sprite.Sprite):
 
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("/Users/daniil/Desktop/cods/lab08/Enemy.png")
+        self.image = pygame.image.load(r"C:\Users\hhhg4\Desktop\pp2\lab08\images\Enemy.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -57,7 +57,7 @@ class Player(pygame.sprite.Sprite):
 
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("/Users/daniil/Desktop/cods/lab08/Player.png")
+        self.image = pygame.image.load(r"C:\Users\hhhg4\Desktop\pp2\lab08\images\Player.png")
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
 
@@ -75,7 +75,7 @@ class Coin(pygame.sprite.Sprite):
 
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('/Users/daniil/Desktop/cods/lab08/free-icon-dollar-coin-9787486.png')
+        self.image = pygame.image.load(r'C:\Users\hhhg4\Desktop\pp2\lab08\images\coin.png')
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
@@ -137,7 +137,7 @@ while True:
         new_coin.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
 
     if pygame.sprite.spritecollideany(P1, enemies):
-        pygame.mixer.Sound('/Users/daniil/Desktop/cods/lab08/crash.wav').play()
+        pygame.mixer.Sound(r'C:\Users\hhhg4\Desktop\pp2\lab08\images\crash.wav').play()
         time.sleep(0.5)
 
         DISPLAYSURF.fill(RED)
